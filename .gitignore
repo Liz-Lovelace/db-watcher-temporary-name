@@ -1,0 +1,13 @@
+.env
+
+webview/node_modules
+webview/.pnp
+webview.pnp.js
+webview/coverage
+webview/build
+webview/.DS_Store
+webview/npm-debug.log*
+webview/yarn-debug.log*
+webview/yarn-error.log*
+
+backend/node_modules
