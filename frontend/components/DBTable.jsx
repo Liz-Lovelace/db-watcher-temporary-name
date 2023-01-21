@@ -1,3 +1,4 @@
+import './DBTable.css';
 import { ITableProps, kaReducer, Table } from 'ka-table';
 import { DataType, EditingMode, SortingMode } from 'ka-table/enums';
 import { DispatchFunc } from 'ka-table/types';
@@ -11,30 +12,34 @@ export default function DBTable({columns, rows}){
       id: index,
     }),
   );
+  const cols = columns.map(column => ({ 
+        key: column.name,
+        title: column.name,
+        // TODO: make this dynamic
+        dataType: DataType.String,
+        //isResizable: true,
+        colGroup: {style: {
+          minWidth: 30,
+        }},
+        width: 100,
+      }));
 
   // initial value of the *props
-  const tablePropsInit: ITableProps = {
-    columns: columns.map(column => ({ 
-      key: column.name,
-      title: column.name,
-      // TODO: make this dynamic
-      dataType: DataType.String,
-      isResizable: true,
-      colGroup: {style: {minWidth: 30}},
-      width: 100,
-    })),
+  const tablePropsInit = {
+    columns: cols,
     data: dataArray,
     rowKeyField: 'id',
     sortingMode: SortingMode.Single,
     columnReordering: true,
+    columnResizing: true,
   };
 
   // in this case *props are stored in the state of parent component
   const [tableProps, changeTableProps] = useState(tablePropsInit);
 
-  const dispatch: DispatchFunc = (action) => { // dispatch has an *action as an argument
+  const dispatch = (action) => { // dispatch has an *action as an argument
     // *kaReducer returns new *props according to previous state and *action, and saves new props to the state
-    changeTableProps((prevState: ITableProps) => kaReducer(prevState, action));
+    changeTableProps((prevState) => kaReducer(prevState, action));
   };
 
   return (

@@ -1,8 +1,8 @@
-import './App.css';
+import globalStyle from './App.css';
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import SchemaNav from './components/SchemaNav';
-import DBTable from './components/DBTable';
+import SchemaNav from './components/SchemaNav.jsx';
+import DBTable from './components/DBTable.jsx';
 
 function App() {
   const [data, setData] = useState(null)
@@ -13,10 +13,11 @@ function App() {
     fetch(`http://localhost:6969/table/${tableName}`)
       .then((res) => res.json())
       .then((data) => {
-  console.log('regen')
+        console.log('regen')
         setData(data)
       })
   }
+
   useEffect(() => {
     const interval = setInterval(fetchTable, 1000);
     return () => clearInterval(interval);
@@ -25,7 +26,7 @@ function App() {
   if (!data) return <p>No data</p>
 
   return (
-    <>
+    <div>
       <SchemaNav />
       <DBTable 
         columns={data.columns}
@@ -33,7 +34,7 @@ function App() {
       />
       timestamp {data.timestamp}
       
-    </>
+    </div>
   )
 }
 

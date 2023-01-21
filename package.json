@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "start": "webpack-dev-server --mode development --hot",
+    "build": "webpack --mode production"
+  },
+  "type": "module",
+  "name": "db-tmp-watcher",
+  "version": "0.0.1",
+  "author": "Liz",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ka-table": "^7.8.1",
+    "knex": "^2.4.1",
+    "knex-schema-inspector": "^3.0.0",
+    "moment": "^2.29.4",
+    "pg": "^8.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.7.0",
+    "react-router-dom": "^6.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  }
+}

@@ -1,0 +1,8 @@
+.tableLink {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+.tableLink:visited {
+  color: var(--main-text-color);
+}

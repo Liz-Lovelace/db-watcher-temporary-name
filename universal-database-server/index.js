@@ -10,12 +10,11 @@ const knex = CreateKnexPool({
   connection: {
     host : 'localhost',
     port: 5432,
-    user : '',
-    password : '',
-    database : ''
+    user : 'showcase-user',
+    password : 'showcase_secret',
+    database : 'showcase_db'
   }
 });
-
 
 const schema = schemaInspector.SchemaInspector(knex)
 

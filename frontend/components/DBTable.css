@@ -1,0 +1,24 @@
+body .ka {
+  width: 100%
+}
+
+.ka .ka-table {
+  background-color: var(--main-bg-color);
+  width: 500px;
+}
+
+.ka .ka-thead-background {
+  background-color: var(--accent-bg-color);
+}
+
+.ka .ka-cell {
+  padding: 0.3em 0.8em;
+  word-wrap: break-word;
+  transition: 1s;
+}
+
+/*.ka-thead-cell-content, .ka-cell-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}*/
